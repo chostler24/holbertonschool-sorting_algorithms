@@ -2,7 +2,7 @@
 #define SORT_H
 
 /*Libraries*/
-#include <stdlib.>
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
