@@ -10,6 +10,7 @@
 void node_swap(listint_t **head, listint_t **list)
 {
 	listint_t *n1, *n2;
+
 	n1 = *head;
 	n2 = (*head)->next;
 
