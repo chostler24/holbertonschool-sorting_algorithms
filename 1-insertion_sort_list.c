@@ -10,8 +10,8 @@
 void node_swap(listint_t **head, listint_t **list)
 {
 	listint_t *n1, *n2;
-	*n1 = *head;
-	*n2 = (*head)->next;
+	n1 = *head;
+	n2 = (*head)->next;
 
 	n1->next = n2->next;
 	n2->next = n1;
@@ -45,4 +45,37 @@ void node_swap(listint_t **head, listint_t **list)
 
 void insertion_sort_list(listint_t **list)
 {
+	listint_t *n1, *n2;
+
+	if (list == NULL)
+	{
+		return;
+	}
+
+	n1 = *list;
+
+	for (; n1->next != NULL; n1 = n1->next)
+	{
+		if (n1->n > n1->next->n)
+		{
+			node_swap(&n1, list);
+			print_list(*list);
+
+			n2 = n1->prev;
+
+			for (; n2 != NULL; n2 = n2->prev)
+			{
+				if (n2->n > n2->next->n)
+				{
+					node_swap(&n2, list);
+					print_list(*list);
+				}
+
+				else
+				{
+					break;
+				}
+			}
+		}
+	}
 }
