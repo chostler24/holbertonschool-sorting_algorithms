@@ -30,4 +30,11 @@ void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 void node_swap(listint_t **head, listint_t **list);
 
+/*Merge Sort prototypes*/
+void merge_sort(int *array, size_t size);
+void array_print(int *array, int start, int end);
+void split_it(int *tmp, int *array, int start, int end);
+void arr_cp(int *array, int *tmp, int start, int end);
+void big_merger(int *array, int *tmp, int start, int half, int end);
+
 #endif
