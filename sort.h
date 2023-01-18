@@ -37,4 +37,9 @@ void split_it(int *tmp, int *array, int start, int end);
 void arr_cp(int *array, int *tmp, int start, int end);
 void big_merger(int *array, int *tmp, int start, int half, int end);
 
+/*Heap Sort Prototypes*/
+void heap_sort(int *array, size_t size);
+void swappy_boi(int *x, int *y);
+void heap_it_up(int *array, size_t size, int idx);
+
 #endif
