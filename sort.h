@@ -40,6 +40,6 @@ void big_merger(int *array, int *tmp, int start, int half, int end);
 /*Heap Sort Prototypes*/
 void heap_sort(int *array, size_t size);
 void swappy_boi(int *x, int *y);
-void heap_it_up(int *array, size_t size, int idx);
+void heap_it_up(int *array, int size_array, size_t size, int idx);
 
 #endif

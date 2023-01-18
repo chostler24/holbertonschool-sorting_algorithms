@@ -9,16 +9,18 @@
  */
 void heap_sort(int *array, size_t size)
 {
-    int idx = size / 2 - 1;
-    int jdx = size - 1;
+    int int_size = (int)size;
+    int idx;
 
-    for (; idx > 0; idx--)
-        heap_it_up(array, size, idx);
+    for (idx = int_size / 2 - 1; idx > 0; idx--)
+        heap_it_up(array, size, size, idx);
 
-    for (; jdx >= 0; jdx--)
+    for (idx = int_size - 1; idx >= 0; idx--)
     {
-        swappy_boi(&array[0], &array[jdx]);
-        heap_it_up(array, jdx, 0);
+        swappy_boi(&array[0], &array[idx]);
+        if (idx > 0)
+            print_array(array, size);
+        heap_it_up(array, idx, size, 0);
     }
 }
 
@@ -32,6 +34,7 @@ void heap_sort(int *array, size_t size)
 void swappy_boi(int *x, int *y)
 {
     int tmp = *x;
+
     *x = *y;
     *y = tmp;
 }
@@ -39,27 +42,28 @@ void swappy_boi(int *x, int *y)
 /**
  * heap_it_up - Building that heap
  * @array: given array
+ * @size_array: size of sorted array
  * @size: size of array
  * @idx: index
  *
  * Return: void
  */
-void heap_it_up(int *array, size_t size, int idx)
+void heap_it_up(int *array, int size_array, size_t size, int idx)
 {
-    int no = (int)(size);
     int rt = 2 * idx + 2;
     int lt = 2 * idx + 1;
     int big = idx;
 
-    if (lt < no && array[lt] > array[big])
+    if (lt < size_array && array[lt] > array[big])
         big = lt;
 
-    if (rt < no && array[rt] > array[big])
+    if (rt < size_array && array[rt] > array[big])
         big = rt;
 
     if (big != idx)
     {
         swappy_boi(&array[idx], &array[big]);
-        heap_it_up(array, size, big);
+        print_array(array, size);
+        heap_it_up(array, size_array, size, big);
     }
 }
