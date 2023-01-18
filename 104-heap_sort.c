@@ -12,7 +12,7 @@ void heap_sort(int *array, size_t size)
     int int_size = (int)size;
     int idx;
 
-    for (idx = int_size / 2 - 1; idx > 0; idx--)
+    for (idx = int_size / 2 - 1; idx >= 0; idx--)
         heap_it_up(array, size, size, idx);
 
     for (idx = int_size - 1; idx >= 0; idx--)
@@ -50,9 +50,9 @@ void swappy_boi(int *x, int *y)
  */
 void heap_it_up(int *array, int size_array, size_t size, int idx)
 {
+    int big = idx;
     int rt = 2 * idx + 2;
     int lt = 2 * idx + 1;
-    int big = idx;
 
     if (lt < size_array && array[lt] > array[big])
         big = lt;
