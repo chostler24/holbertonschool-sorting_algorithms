@@ -42,4 +42,8 @@ void heap_sort(int *array, size_t size);
 void swappy_boi(int *x, int *y);
 void heap_it_up(int *array, int size_array, size_t size, int idx);
 
+/*Radix sort Prototypes*/
+void radix_sort(int *array, size_t size);
+void sort_it(int *array, size_t size, int pos, int *res);
+
 #endif
